@@ -71,7 +71,7 @@ public class searchingSortingProblems {
         return -1; // not found
     }
 
-    /* get index of k using iterative binarySearch */
+    /* get index of k using recursive binarySearch */
     public static int binarySearchRecursion(int[] arr, int k, int low, int high) {
         if (high >= low) {
             int mid = low + (high - low) / 2;
