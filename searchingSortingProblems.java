@@ -51,6 +51,22 @@ public class searchingSortingProblems {
         Point p = getIndexOfElement(m,100);
         System.out.println("Element is at x: "+ p.x +" y :"+p.y);
         System.out.println(m[p.x][p.y]);
+
+        /* 11.8 Imagine you are reading in a stream of integers. Periodically, you wish to be able to
+         look up the rank of a number x (the number of values less than or equal to x). Implement
+         the data structures and algorithms to support these operations. That is, implement
+         the method track(int x), which is called when each number is generated,
+         and the methodgetRankOf'Number (int x), which returns the number of values
+         less than or equal to x (not including x itself).*/
+
+         RankNode n = new RankNode(20);
+         n.insert(15);
+         n.insert(25);
+         n.insert(23);
+         n.insert(24);
+         n.insert(11);
+
+         System.out.print("Rank of 24 "+n.getRank(24));
     }
 
     /* get index of k using iterative binarySearch */
