@@ -256,7 +256,7 @@ order, write a method to find an element. */
         return null;
     }
 
-    /* 11.4 Imagine you have a 20 GB file with one string per line. Explain bow you would sort
+    /* 11.4 Imagine you have a 20 GB file with one string per line. Explain how you would sort
     the file.
 
     We'll divide the file into chunks which are x megabytes each, where x is the amount of
