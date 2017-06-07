@@ -170,40 +170,29 @@ the end to hold B. Write a method to merge B into A in sorted order.  */
     public static int findElementInRotatedArr(int[] arr, int n) {
         int pivotIndex = 0;
         /* get dividing point */
-        for (int i = 0; i < arr.length; i++) {
+        int h = arr.length - 1;
+        int l = 0;
+        int m = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
             if (arr[i] > arr[i + 1]) {
-                pivotIndex = i;
+                pivotIndex = i + 1;
                 break;
             }
         }
-
-        if (n > arr[arr.length - 1]) {
-            int high = pivotIndex;
-            int low = 0;
-            while (high >= low) {
-                int mid = low + (high - low);
-                if (arr[mid] == n) {
-                    return mid;
-                } else if (arr[mid] > n) {
-                    high = mid - 1;
-                } else if (arr[mid] < n) {
-                    low = mid + 1;
-                }
-            }
+        if (n < arr[h]) {
+            l = pivotIndex;
+        } else {
+            h = pivotIndex - 1;
         }
-
-        if (n <= arr[arr.length - 1]) {
-            int low = pivotIndex + 1;
-            int high = arr.length - 1;
-            while (high >= low) {
-                int mid = low + (high - low);
-                if (arr[mid] == n) {
-                    return mid;
-                } else if (arr[mid] > n) {
-                    high = mid - 1;
-                } else if (arr[mid] < n) {
-                    low = mid + 1;
-                }
+        while (l <= h) {
+            m = l + (h - l) / 2;
+            if (arr[m] == n) {
+                return m;
+            } else if (arr[m] > n) {
+                h = m - 1;
+            }
+            else if (arr[m] < n) {
+                l = m + 1;
             }
         }
         return -1;
