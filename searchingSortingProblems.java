@@ -122,7 +122,9 @@ the end to hold B. Write a method to merge B into A in sorted order.  */
             }
             maxIndexA--;
         }
-        if (lastIndexB >= 0) {
+        
+        //if (lastIndexB >= 0) {
+        while (lastIndexB >= 0) {
             arr1[maxIndexA] = arr2[lastIndexB];
             lastIndexB--;
             maxIndexA--;
