@@ -230,7 +230,7 @@ the end to hold B. Write a method to merge B into A in sorted order.  */
                 break;
             }
         }
-        /* check that it was rotated  */
+         //check that it was rotated  
         if (pivotIndex != 0) {
             if (n < arr[arr.length - 1]) {
                 return bst(arr, n, pivotIndex + 1, arr.length - 1);
