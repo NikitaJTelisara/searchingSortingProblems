@@ -158,6 +158,27 @@ the end to hold B. Write a method to merge B into A in sorted order.  */
         }
         return result;
     }
+    
+    /* better
+    
+    public static ArrayList<String> sortAnagrams(String[] strings){
+       Hashtable<String, ArrayList<String>> tab = new Hashtable<String, ArrayList<String>>();
+        for(String str:strings) {
+            String sortedStr = sort(str);
+            ArrayList<String> list = (tab.containsKey(sortedStr))? tab.get(sortedStr): new ArrayList<String>();
+            list.add(str);
+            if(list.size()==1){
+                tab.put(sortedStr,list);
+            }
+        }
+        ArrayList<String> result = new ArrayList<String>();
+        for(String s : tab.keySet()){
+             ArrayList<String> list = tab.get(s);
+             result.addAll(list);
+        }
+        return result;
+    }
+    */
 
     public static String sort(String s) {
         char[] a = s.toCharArray();
