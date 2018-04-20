@@ -220,6 +220,27 @@ the end to hold B. Write a method to merge B into A in sorted order.  */
         }
         return -1;
     }
+    
+    /* better 
+    public static int findElementInRotatedArr(int[] arr, int n) {
+        int pivotIndex = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                pivotIndex = i;
+                break;
+            }
+        }
+        /* check that it was rotated  */
+        if (pivotIndex != 0) {
+            if (n < arr[arr.length - 1]) {
+                return bst(arr, n, pivotIndex + 1, arr.length - 1);
+            } else {
+                return bst(arr, n, 0, pivotIndex);
+            }
+        } else {
+            return bst(arr, n, 0, arr.length - 1);
+        }
+    }*/
 
     /* 11.5 Given a sorted array of strings which is interspersed with empty strings, write a
 method to find the location of a given string.
