@@ -265,23 +265,33 @@ method to find the location of a given string.
     */
 
     /* 11.6 Given an MX N matrix in which each row and each column is sorted in ascending
-order, write a method to find an element. */
+order, write a method to find an element. 
+
+m.length = vertical length
+m[0].length = horizontal length
+
+1 2 3
+4 5 6
+i goes till m.length
+j = goes till m[0].length
+
+*/
     public static Point getIndexOfElement(int[][] m, int n) {
         for (int i = 0; i < m.length; i++) {
-            System.out.println(m[i][0]);
-            System.out.println(m[i][m[0].length-1]);
-            if (n >= m[i][0] || n <= m[i][m[0].length-1]) {
-                int low = 0;
-                int high = m[0].length - 1;
-                while (high >= low) {
-                    int mid = low + (high - low) / 2;
+            if (m[i][0] <= n && n <= m[i][m[0].length - 1]) {
+                int l = 0;
+                int h = m[0].length - 1;
+                while (h >= l) {
+                    int mid = l + (h - l) / 2;
                     if (m[i][mid] == n) {
-                        Point p = new Point(i,mid);
+                        Point p = new Point();
+                        p.x = i;
+                        p.y = mid;
                         return p;
                     } else if (m[i][mid] > n) {
-                        high = mid - 1;
+                        h = mid - 1;
                     } else if (m[i][mid] < n) {
-                        low = mid + 1;
+                        l = mid + 1;
                     }
                 }
             }
