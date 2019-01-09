@@ -14,7 +14,7 @@ public class GetClosest100Points {
         x.add(new Point(1, 2));
         get100ClosestPoints(x, r);
     }
-
+// or you can use bfs to get the closest 100 islands
     public static Set<Point> get100ClosestPoints(ArrayList<Point> file, Point r) {
         Set<Point> set = new TreeSet<Point>();
         for (Point p : file) {
