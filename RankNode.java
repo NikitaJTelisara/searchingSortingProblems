@@ -27,7 +27,7 @@ public class RankNode {
 
     public int getRank(int d) {
         if (d == data) {
-            return leftSize;
+            return leftSize + 1;
         }
         if (d < data) {
             return (left == null ? -1 : left.getRank(d));
